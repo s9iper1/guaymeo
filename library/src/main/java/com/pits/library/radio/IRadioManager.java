@@ -1,8 +1,6 @@
 package com.pits.library.radio;
 
 
-import android.graphics.Bitmap;
-
 /**
  * Created by mertsimsek on 03/07/15.
  */
@@ -24,8 +22,9 @@ public interface IRadioManager {
 
     void disconnect();
 
-    void updateNotification(String singerName, String songName, int smallArt, int bigArt);
+//    void updateNotification();
 
-    void updateNotification(String singerName, String songName, int smallArt, Bitmap bigArt);
+
+//    void closeNotification();
 
 }

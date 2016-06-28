@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   Copyright (C) 2012 Andrew Neal
  
   Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,21 +13,32 @@
   See the License for the specific language governing permissions and
   limitations under the License.
 -->
-<LinearLayout android:id="@+id/notification_base"
-              xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="#3c3c3c"
-              android:gravity="center_vertical"
-              android:orientation="horizontal"
-              tools:ignore="ContentDescription">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notification_base"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#CC000000"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    tools:ignore="ContentDescription">
+
+    <RelativeLayout
+        android:background="@android:color/white"
+        android:layout_margin="2dip"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
     <ImageView
+        android:padding="2dip"
+        android:layout_margin="2dip"
         android:id="@+id/notification_image"
         android:layout_width="@dimen/notification_big_icon_width"
         android:layout_height="@dimen/notification_big_icon_height"
-        android:gravity="center"/>
+        android:gravity="center" />
+
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="0dp"
@@ -42,23 +52,23 @@
         <TextView
             android:id="@+id/notification_line_one"
             style="@style/NotificationText"
-            android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
+            android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent.Title" />
 
         <TextView
             android:id="@+id/notification_line_two"
             style="@style/NotificationText"
-            android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent"/>
+            android:textAppearance="@android:style/TextAppearance.StatusBar.EventContent" />
 
     </LinearLayout>
 
     <ImageView
         android:id="@+id/notification_play"
         style="@style/NotificationAction.Play"
-        android:src="@drawable/btn_playback_pause"/>
+        android:src="@drawable/apollo_holo_dark_pause" />
 
     <ImageView
         android:id="@+id/notification_collapse"
         style="@style/NotificationAction.Collapse"
-        android:src="@drawable/btn_notification_collapse"/>
+        android:src="@drawable/btn_notification_collapse" />
 
 </LinearLayout>

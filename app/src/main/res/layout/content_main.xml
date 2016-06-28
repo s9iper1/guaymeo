@@ -12,12 +12,24 @@
     tools:context="com.pressplus.android.radio.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <Button
-        android:text="play"
-        android:id="@+id/button"
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:src="@drawable/app_icon"
+        android:id="@+id/imageView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="168dp" />
+        android:layout_marginTop="10dp" />
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:text="play"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="40dp"
+        android:layout_centerHorizontal="true"/>
+
 </RelativeLayout>

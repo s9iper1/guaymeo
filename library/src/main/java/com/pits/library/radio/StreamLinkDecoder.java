@@ -1,7 +1,6 @@
 package com.pits.library.radio;
 
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -43,7 +42,6 @@ public class StreamLinkDecoder extends AsyncTask<Void, Void, String> {
             URLConnection connection = null;
             connection = website.openConnection();
             BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-            Log.i("TEST", in.toString());
             response = new StringBuilder();
             String inputLine;
 

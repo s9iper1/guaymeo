@@ -4,7 +4,6 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
-import android.graphics.Bitmap;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -46,6 +45,8 @@ public class RadioManager implements IRadioManager {
      */
     private boolean isServiceConnected;
 
+    public static Class aClass;
+
     /**
      * Private constructor because of Singleton pattern
      * @param mContext
@@ -56,14 +57,20 @@ public class RadioManager implements IRadioManager {
         isServiceConnected = false;
     }
 
+//    public void closeNotification() {
+//        mService.removeNotification();
+//
+//    }
+
     /**
      * Singleton
      * @param mContext
      * @return
      */
-    public static RadioManager with(Context mContext) {
+    public static RadioManager with(Context mContext, Class activity) {
         if (instance == null)
             instance = new RadioManager(mContext);
+        aClass = activity;
         return instance;
     }
 
@@ -152,31 +159,11 @@ public class RadioManager implements IRadioManager {
         mContext.unbindService(mServiceConnection);
     }
 
-    /**
-     * Update notification data
-     * @param singerName
-     * @param songName
-     * @param smallArt
-     * @param bigArt
-     */
-    @Override
-    public void updateNotification(String singerName, String songName, int smallArt, int bigArt) {
-        if(mService != null)
-            mService.updateNotification(singerName, songName, smallArt, bigArt);
-    }
-
-    /**
-     * Update notification data
-     * @param singerName
-     * @param songName
-     * @param smallArt
-     * @param bigArt
-     */
-    @Override
-    public void updateNotification(String singerName, String songName, int smallArt, Bitmap bigArt) {
-        if(mService != null)
-            mService.updateNotification(singerName, songName, smallArt, bigArt);
-    }
+//    @Override
+//    public void updateNotification() {
+//        if(mService != null)
+//            mService.updateNotification();
+//    }
 
     /**
      * Connection
